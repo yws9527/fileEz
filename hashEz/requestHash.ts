@@ -1,4 +1,5 @@
 import sparkMD5 from 'spark-md5';
+import { IFileChunkList } from '../types';
 
 export default class RequestHash {
   setProgress: (n: number) => number;

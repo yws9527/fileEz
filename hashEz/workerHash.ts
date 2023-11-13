@@ -1,3 +1,5 @@
+import { IFileChunkList, IFileHandleThread, IFileHandleOptions, IFileMessageEventData, Recordable } from "../types";
+
 export default class WorkerHash {
   setProgress: (n: number) => number;
   maximumWorkTime: number = 0;

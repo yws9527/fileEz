@@ -4,6 +4,7 @@ import CreateChunks from './chunksEz';
 // import WorkerHash from './hashEz/workerHash';
 // 通过js Request方式获取hash
 import RequestHash from './hashEz/requestHash';
+import { IFileEz } from './types';
 
 const fileEz = {
   state: 0, // 0 - <= 100MB 直传OSS   1 - > 100MB 切片上传OSS
@@ -24,7 +25,7 @@ function fileSize(file: File) {
 
 // 处理上传文件 大于100M
 // 切片，秒传，续传，并发
-async function fileSizeMT100MHandle(file: File) {
+async function fileSizeMT100MHandle(file: File): Promise<IFileEz> {
   const createChunks = new CreateChunks(file, setProgress);
   const chunks = await createChunks.createFileChunks();
   fileEz.state = 1;
@@ -55,7 +56,7 @@ async function fileSizeMT100MHandle(file: File) {
 
 // 处理上传文件 <= 100M
 // 秒传
-function fileSizeLT100MHandle(file: File) {
+function fileSizeLT100MHandle(file: File): Promise<IFileEz> {
   if (fileSize(file) <= 100) {
     return new Promise((resolve) => {
       const fileReader = new FileReader();
@@ -75,7 +76,7 @@ function fileSizeLT100MHandle(file: File) {
 }
 
 // 职责链模式设计文件处理策略
-function fileSizeHandle(file: File) {
+function fileSizeHandle(file: File): Promise<IFileEz> {
   return fileSizeLT100MHandle(file);
 }
 

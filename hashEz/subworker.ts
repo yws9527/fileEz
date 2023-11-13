@@ -1,4 +1,5 @@
 import sparkMD5 from 'spark-md5';
+import { IFileHandleThread } from '../types';
 
 const tasks = [] as IFileHandleThread[];
 let isWorking = false;

@@ -1,3 +1,5 @@
+import { IFileChunkList } from "./types";
+
 export default class CreateChunks {
   file: File;
   setProgress;

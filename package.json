@@ -4,7 +4,8 @@
   "description": "上传文件处理，获取MD5，切片",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "rm -rf ./fileez-*.tgz && npm pack"
   },
   "author": "",
   "license": "ISC",
