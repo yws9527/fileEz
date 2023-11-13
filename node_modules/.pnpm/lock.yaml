@@ -1,0 +1,25 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+dependencies:
+  spark-md5:
+    specifier: ^3.0.2
+    version: 3.0.2
+
+devDependencies:
+  '@types/spark-md5':
+    specifier: ^3.0.4
+    version: 3.0.4
+
+packages:
+
+  /@types/spark-md5@3.0.4:
+    resolution: {integrity: sha512-qtOaDz+IXiNndPgYb6t1YoutnGvFRtWSNzpVjkAPCfB2UzTyybuD4Tjgs7VgRawum3JnJNRwNQd4N//SvrHg1Q==}
+    dev: true
+
+  /spark-md5@3.0.2:
+    resolution: {integrity: sha512-wcFzz9cDfbuqe0FZzfi2or1sgyIrsDwmPwfZC4hiNidPdPINjeUwNfv5kldczoEAcjl9Y1L3SM7Uz2PUEQzxQw==}
+    dev: false
